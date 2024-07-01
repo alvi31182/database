@@ -26,5 +26,10 @@ func ConnectDb() (*sql.DB, error) {
 		return nil, fmt.Errorf("не удалось подключиться к базе данных: %w", err)
 	}
 
+	err = db.Ping()
+	if err != nil {
+		return nil, fmt.Errorf("Не удалось установить соединение с базой данных: %w", err)
+	}
+
 	return db, nil
 }
