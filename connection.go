@@ -10,7 +10,7 @@ import (
 	_ "github.com/lib/pq"
 )
 
-func connectDb() (*sql.DB, error) {
+func ConnectDb() (*sql.DB, error) {
 	err := godotenv.Load(".env.local")
 	if err != nil {
 		log.Fatalf("ошибка при загрузке .env.local файла: %v\n", err)
